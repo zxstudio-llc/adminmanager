@@ -3,7 +3,7 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsersModule } from './users/users.module';
 import { RolesModule } from './roles/roles.module';
-import { TransactionModule } from './transactions/transactions.module';
+//import { TransactionModule } from './transactions/transactions.module';
 import { SubscriptionsModule } from './subscriptions/subscriptions.module';
 import { ClientsModule } from './clients/clients.module';
 import { SalesModule } from './sales/sales.module';
@@ -17,7 +17,6 @@ import { DepartmentsModule } from './departments/departments.module';
 import { LeavesModule } from './leaves/leaves.module';
 import { CompaniesModule } from './companies/companies.module';
 import { AuthModule } from './auth/auth.module';
-import { RolePermissionModule } from './role_permission/role_permission.module';
 import { TransactionRoleModule } from './transaction-role/transaction-role.module';
 import { PermissionsModule } from './permissions/permissions.module';
 
@@ -35,7 +34,7 @@ import { PermissionsModule } from './permissions/permissions.module';
     }),
     UsersModule,
     RolesModule,
-    TransactionModule,
+    //TransactionModule,
     SubscriptionsModule,
     ClientsModule,
     SalesModule,
@@ -49,7 +48,6 @@ import { PermissionsModule } from './permissions/permissions.module';
     LeavesModule,
     CompaniesModule,
     AuthModule,
-    RolePermissionModule,
     TransactionRoleModule,
     PermissionsModule,
   ],

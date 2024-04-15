@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
-import { Role } from 'src/roles/entities/role.entity';
-import { Column, Entity, JoinTable, OneToMany } from 'typeorm';
+// import { TransactionRole } from 'src/transaction-role/entities/transaction-role.entity';
+import { Column, Entity } from 'typeorm';
 
 @Entity()
 export class Transaction {
@@ -16,17 +16,9 @@ export class Transaction {
   @Column({ default: true })
   isActive: boolean;
 
-  @OneToMany(() => Role, (role) => role.transaction)
-  @JoinTable({
-    name: 'role_permissions',
-    joinColumn: {
-      name: 'permission_id',
-      referencedColumnName: 'id',
-    },
-    inverseJoinColumn: {
-      name: 'role_id',
-      referencedColumnName: 'id',
-    },
-  })
-  roles: Role[];
+  // @OneToMany(
+  //   () => TransactionRole,
+  //   (transactionRole) => transactionRole.transaction,
+  // )
+  // transactionRole: TransactionRole[];
 }

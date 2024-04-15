@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { Transaction } from 'src/transactions/entities/transactions.entity';
+import { TransactionRole } from 'src/transaction-role/entities/transaction-role.entity';
 import { Column, Entity, OneToMany } from 'typeorm';
 
 @Entity()
@@ -16,6 +16,6 @@ export class Role {
   @Column({ default: true })
   isActive: boolean;
 
-  @OneToMany(() => Transaction, (permissions) => permissions.roles)
-  transaction: Transaction[];
+  @OneToMany(() => TransactionRole, (TransactionRole) => TransactionRole.role)
+  transactionRole: TransactionRole[];
 }
