@@ -1,57 +1,15 @@
-/* eslint-disable prettier/prettier */
 import { Module } from '@nestjs/common';
-import { TypeOrmModule } from '@nestjs/typeorm';
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { RolesModule } from './roles/roles.module';
-//import { TransactionModule } from './transactions/transactions.module';
-import { SubscriptionsModule } from './subscriptions/subscriptions.module';
-import { ClientsModule } from './clients/clients.module';
-import { SalesModule } from './sales/sales.module';
-import { StoresModule } from './stores/stores.module';
-import { TransfersModule } from './transfers/transfers.module';
-import { InventoryModule } from './inventory/inventory.module';
-import { HrmModule } from './hrm/hrm.module';
-import { CategoriesModule } from './categories/categories.module';
-import { ShiftsModule } from './shifts/shifts.module';
-import { DepartmentsModule } from './departments/departments.module';
-import { LeavesModule } from './leaves/leaves.module';
-import { CompaniesModule } from './companies/companies.module';
-import { AuthModule } from './auth/auth.module';
-import { TransactionRoleModule } from './transaction-role/transaction-role.module';
+import { TransactionsModule } from './transactions/transactions.module';
+import { TransrolesModule } from './transroles/transroles.module';
 import { PermissionsModule } from './permissions/permissions.module';
 
 @Module({
-  imports: [
-    TypeOrmModule.forRoot({
-      type: 'mysql',
-      host: 'localhost',
-      port: 3307,
-      username: 'zxstudioDB',
-      password: 'ZXStudio2023',
-      database: 'db_crud',
-      autoLoadEntities: true,
-      synchronize: true,
-    }),
-    UsersModule,
-    RolesModule,
-    //TransactionModule,
-    SubscriptionsModule,
-    ClientsModule,
-    SalesModule,
-    StoresModule,
-    TransfersModule,
-    InventoryModule,
-    HrmModule,
-    CategoriesModule,
-    ShiftsModule,
-    DepartmentsModule,
-    LeavesModule,
-    CompaniesModule,
-    AuthModule,
-    TransactionRoleModule,
-    PermissionsModule,
-  ],
-  controllers: [],
-  providers: [],
+  imports: [UsersModule, RolesModule, TransactionsModule, TransrolesModule, PermissionsModule],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {}

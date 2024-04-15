@@ -1,4 +1,4 @@
-version: '3.8'
+version: "3.8"
 services:
   mysql:
     image: mysql:8.0
@@ -7,9 +7,9 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: db_crud
-      MYSQL_USER: zxstudioDB
-      MYSQL_PASSWORD: ZXStudio2023
+      MYSQL_USER: zxstudio
+      MYSQL_PASSWORD: zxstudio2023
     volumes:
       - ./mysql:/var/lib/mysql
     ports:
-      - '3307:3306'
+      - "3307:3306"
