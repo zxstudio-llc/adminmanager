@@ -1,4 +1,4 @@
-import { Column, DeleteDateColumn, Entity } from 'typeorm';
+import { Column, CreateDateColumn, Entity } from 'typeorm';
 
 @Entity()
 export class User {
@@ -20,6 +20,6 @@ export class User {
   @Column({ default: true })
   isActive: boolean;
 
-  @DeleteDateColumn()
-  deleteAt: Date;
+  @CreateDateColumn({ default: Date })
+  createAt: Date;
 }

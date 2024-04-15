@@ -7,6 +7,7 @@ import { Repository } from 'typeorm';
 
 @Injectable()
 export class RolesService {
+  [x: string]: any;
   constructor(
     @InjectRepository(Role)
     private readonly roleRepository: Repository<Role>,

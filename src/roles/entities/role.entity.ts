@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
-import { Permission } from 'src/permissions/entities/permission.entity';
-import { Column, DeleteDateColumn, Entity, ManyToMany } from 'typeorm';
+import { Transaction } from 'src/transactions/entities/transactions.entity';
+import { Column, Entity, OneToMany } from 'typeorm';
 
 @Entity()
 export class Role {
@@ -10,12 +10,12 @@ export class Role {
   @Column()
   name: string;
 
-  @DeleteDateColumn()
-  deleteAt: Date;
+  @Column()
+  description: string;
 
   @Column({ default: true })
   isActive: boolean;
 
-  @ManyToMany(() => Permission, (permissions) => permissions.roles)
-  permissions: Permission[];
+  @OneToMany(() => Transaction, (permissions) => permissions.roles)
+  transaction: Transaction[];
 }
